@@ -27,6 +27,10 @@ const Search = () => {
         fetchPosts();
     }, [name]);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, );
+
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentProducts = findedProducts.slice(indexOfFirstPost, indexOfLastPost);

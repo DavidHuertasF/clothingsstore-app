@@ -16,14 +16,16 @@ const flattenProducts = products => {
         // productFlatten.price = product.price;
 
         productFlatten.discount = null
-
-        for (const price of product.prices.prices) {
-            if (price.type === 'promotion') {
-                productFlatten.price = product.price;
-                productFlatten.originalPrice = product.original_price;
-                productFlatten.originalPrice = new Intl.NumberFormat().format(productFlatten.originalPrice);
+        if (product.prices.prices) {
+            for (const price of product.prices.prices) {
+                if (price.type === 'promotion') {
+                    productFlatten.price = product.price;
+                    productFlatten.originalPrice = product.original_price;
+                    productFlatten.originalPrice = new Intl.NumberFormat().format(productFlatten.originalPrice);
+                }
             }
         }
+
 
         if (product.original_price)
             productFlatten.discount = Math.round(100 - ((product.price * 100) / product.original_price));
@@ -39,7 +41,7 @@ const mercadoLibreService = {
     getRandomProducts: () => {
         return axios.get(`https://api.mercadolibre.com/sites/MCO/search?category=MCO1430&limit=10&offset=${getRandomInt()}`)
             .then((res) => {
-                const {results} = res.data;
+                const { results } = res.data;
                 console.log(res.data.results);
                 return flattenProducts(results);
             })
@@ -51,7 +53,7 @@ const mercadoLibreService = {
     getProductsByName: name => {
         return axios.get(`https://api.mercadolibre.com/sites/MCO/search?category=MCO1430&q=${name}`)
             .then((res) => {
-                const {results} = res.data;
+                const { results } = res.data;
                 console.log(res.data.results);
                 return flattenProducts(results);
             })

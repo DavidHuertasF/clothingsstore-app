@@ -1,11 +1,18 @@
 import ProductCard from '../../../../assets/ProductCard/ProductCard';
+import SearchMessage from '../SearchMessage/SearchMessage';
 import './Products.scss'
 
 const Products = ({products, loading, name, totalPosts}) => {
     
     if(loading){
         return (
-            <h2>Loading...</h2>
+            <SearchMessage />
+        );
+    }else if(!totalPosts){
+        return (
+            <SearchMessage
+                message = {`No hay resultados para ${name}`}
+             />
         );
     }
     

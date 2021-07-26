@@ -1,6 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Heebo:wght@300&family=Nunito:wght@800&family=Roboto:wght@900&display=swap');
+
+// font-family: 'Bebas Neue', cursive; icon app
+// font-family: 'Heebo', sans-serif; search input
+// font-family: 'Nunito', sans-serif;  titles
+// font-family: 'Roboto', sans-serif; featured categories
+
+html{
+  scroll-snap-align: none;
+  scroll-snap-align:  end; 
+    scroll-snap-type: x proximity;
+  // scroll-snap-align: center;
+  // scroll-snap-align: inherit;
+// scroll-snap-align: initial;
+// scroll-snap-align: revert;
+// scroll-snap-align: unset;
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -38,6 +53,13 @@ button:focus {
   justify-content: space-around;
   height: 33px;
   cursor: pointer;
+  min-width: 100px;
+}
+
+.principal-dark__button:hover,
+.principal-light__button:hover{
+  // transform: scale(1.2);
+  filter: invert(1);
 }
 
 .principal-light__button {

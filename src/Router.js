@@ -8,6 +8,8 @@ const Initial = () => {
             <Switch>
                 <Route exact path='/' component={ClothingApp} />
                 <Route exact path="/search/:name" component={ClothingApp} />
+                <Route exact path="/search/" component={ClothingApp} />
+
                 <Route path='*' component={NoMatch} />
             </Switch>
         </BrowserRouter>

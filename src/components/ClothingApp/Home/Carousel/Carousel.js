@@ -1,5 +1,8 @@
+import { useEffect, useState } from 'react';
 import './Carousel.scss'
 const Carousel = () => {
+
+
     return (
         <section className="carousel" aria-label="Gallery">
             <ol className="carousel__viewport">
@@ -9,9 +12,9 @@ const Carousel = () => {
                     <img src="https://drive.google.com/uc?id=1m4s5Ra2V7VsNmE0cU1IQZB7GC5ZMhMQS" alt="" />
                     <div className="carousel__snapper">
                         <a href="#carousel__slide4"
-                            className="carousel__prev">Go to last slide</a>
+                            className="carousel__prev">s</a>
                         <a href="#carousel__slide2"
-                            className="carousel__next">Go to next slide</a>
+                            className="carousel__next">s</a>
                     </div>
                 </li>
                 <li id="carousel__slide2"
@@ -49,6 +52,8 @@ const Carousel = () => {
             </ol>
             <aside className="carousel__navigation">
                 <ol className="carousel__navigation-list">
+                    {/* <ol className="carousel__navigation-list"> */}
+
                     <li className="carousel__navigation-item">
                         <a href="#carousel__slide1"
                             className="carousel__navigation-button">Go to slide 1</a>
@@ -69,8 +74,6 @@ const Carousel = () => {
             </aside>
         </section>
     );
-
-
 }
 
 export default Carousel;

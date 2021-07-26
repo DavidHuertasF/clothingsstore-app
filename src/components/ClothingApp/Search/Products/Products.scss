@@ -5,6 +5,8 @@
   // grid-template-columns: repeat(4, 20%);
 }
 
+
+
 .title_products {
   display: flex;
   margin-left: 20px;
@@ -34,7 +36,7 @@
   }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1000px) {
   .products_container {
     grid-template-columns: repeat(3, 26vw) !important;
   }

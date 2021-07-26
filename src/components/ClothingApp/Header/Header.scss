@@ -19,9 +19,16 @@ header {
   }
 
   .logo_text {
-    font-size: 4vw;
+    font-size: calc(40px + 1vw);
     font-family: "Bebas Neue", cursive;
+    color: black;
+    // transition: 0.2s;
   }
+
+  .logo_text:hover{
+    transform: scale(1.04);
+  }
+
 
   .search-header {
     width: 40vw;
@@ -45,7 +52,14 @@ header {
     border: none;
     background-color: #eeeeee;
     color: #6b6b6b;
+    font-family: "Heebo", sans-serif;
     // margin-left: 1vw;
+    transition: 0.7s;
+  }
+
+  .search_input:focus{
+    background-color: #dedede;
+    color: black;
   }
 
   .search-image_icon {
@@ -59,7 +73,10 @@ header {
 
   .right-header {
     display: flex;
+    width: 20vw;
+    margin-left: 20px;
     align-items: center;
+    justify-content: space-evenly;
   }
   .cart_icon {
     width: 24px;
@@ -80,18 +97,23 @@ header {
   height: 50px;
   width: 100%;
   display: flex;
-  color: white;
   justify-content: center;
   align-items: center;
   font-weight: bold;
 
-  p:first-child {
+  a:first-child {
     border-left: none;
   }
-  p {
+  a {
+    color: white;
     padding: 6px 2.5vw;
     cursor: pointer;
     border-left: solid 1px rgb(124, 124, 124);
+  }
+
+   a:hover {
+    color:#5b17aa;
+    
   }
 
   .phone {
@@ -101,17 +123,19 @@ header {
 
 @media only screen and (max-width: 768px) {
   .cart_icon_p {
-    width: 9vw;
-    height: 9vw;
+    width: 35px;
+    height: 35px;
     margin-left: 4vw;
   }
   .header-top_container {
     flex-direction: column;
-    height: 145px;
+    height: calc(10rem - 4vw);
 
     .left-header {
       display: flex;
       align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
       margin-bottom: 10px;
     }
     .search-header {
@@ -127,7 +151,7 @@ header {
       padding: 10px 12px;
     }
     .logo_text {
-      font-size: 12vw;
+      font-size: 40px;
     }
 
     .phone {
@@ -135,16 +159,16 @@ header {
     }
 
     .menu_button {
-      width: 12vw;
       display: block !important;
-      height: 8vw;
+      width: 40px;
+      height: 40px;
       background-color: white;
       border: none;
       margin-right: 10px;
 
       div {
         background-color: #413f3f;
-        height: 18%;
+        height: 14%;
         border-radius: 1px;
         margin-bottom: 18%;
       }
