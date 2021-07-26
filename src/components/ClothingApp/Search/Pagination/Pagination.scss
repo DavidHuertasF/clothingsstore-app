@@ -1,0 +1,52 @@
+.pagination_container {
+  background: black;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  position: fixed;
+  align-items: center;
+  width: 125px;
+  right: 0;
+  height: calc(100% - 130px);
+  bottom: 0;
+
+  .title{
+    color: white;
+    margin-top:25px
+  }
+}
+
+.page-item {
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  margin: 10px 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  cursor: pointer;
+  font-size: 24px;
+  font-family: "Bebas Neue", cursive;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .pagination_container{
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    padding: 20px 5px;
+    justify-content: space-around;
+
+    .title{
+      display:none;
+    }
+  }
+
+  // .pagination_container{
+  //     width: 70px;
+  //   }
+}
