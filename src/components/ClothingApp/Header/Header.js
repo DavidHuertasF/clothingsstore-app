@@ -1,12 +1,13 @@
+import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import SideBar from './Sidebar/SideBar'
 import "./Header.scss";
-import {HeaderData} from "./HeaderData.js";
+import { HeaderData } from "./HeaderData.js";
 
 
 import { useState } from 'react';
 
-const Header = ({ user }) => {
+const Header = ({ user, products }) => {
 
     const [nameFilter, setNameFilter] = useState('');
     const [sidebar, setSidebar] = useState(false);
@@ -28,8 +29,13 @@ const Header = ({ user }) => {
                         </button>
                         <Link to={`/`}>
                             <p className='logo_text'>CLOTHESSTORE</p>
+                            
                         </Link>
-                        <img className='cart_icon_p phone' src="https://drive.google.com/uc?id=17ByO510HDOzVzrnwEVT2ZofvO_u3891c" alt="" />
+                        <Link to={`/cart`}>
+                            <img className='cart_icon_p phone' src="https://drive.google.com/uc?id=17ByO510HDOzVzrnwEVT2ZofvO_u3891c" alt="" />
+                            <div className='phone cart-number' >{products.length}</div>
+                        </Link>
+
                     </div>
 
                     <div className="search-header">
@@ -43,7 +49,10 @@ const Header = ({ user }) => {
                     </div>
                     <p>{user}</p>
                     <div className="right-header">
-                        <img className='cart_icon' src="https://drive.google.com/uc?id=17ByO510HDOzVzrnwEVT2ZofvO_u3891c" alt="" />
+                        <Link to={`/cart`}>
+                            <img className='cart_icon' src="https://drive.google.com/uc?id=17ByO510HDOzVzrnwEVT2ZofvO_u3891c" alt="" />
+                            <div className='cart-number desktop' >{products.length}</div>
+                        </Link>
                         <img className='profile_icon' src="https://drive.google.com/uc?id=1u1LLMhOdLunWOEq6AGYN9M6LjSNeO1yp" alt="" />
                         <div className="principal-light__button start-sesion_button">Iniciar sesión</div>
                     </div>
@@ -71,4 +80,8 @@ const Header = ({ user }) => {
     );
 }
 
-export default Header;
+const mapStateToProps = state => ({
+    products: state.cartProducts,
+});
+
+export default connect(mapStateToProps)(Header);

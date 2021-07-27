@@ -1,8 +1,14 @@
 import ProductCard from '../../../../assets/ProductCard/ProductCard';
 import SearchMessage from '../SearchMessage/SearchMessage';
 import './Products.scss'
+import { connect } from 'react-redux';
+import addCartProduct from '../../../../redux/actions/addCartProduct'
 
-const Products = ({products, loading, name, totalPosts}) => {
+const Products = ({products, loading, name, totalPosts, addCartProduct}) => {
+
+    const addProduct = product => {
+        addCartProduct(product);
+    }
     
     if(loading){
         return (
@@ -27,6 +33,7 @@ const Products = ({products, loading, name, totalPosts}) => {
          {products.map((product, idx) =>
                 <ProductCard
                     {...product}
+                    func = {() => {addProduct(product)}}
                 />
             )}
         </div>
@@ -34,4 +41,9 @@ const Products = ({products, loading, name, totalPosts}) => {
     )
 }
 
-export default Products;
+
+const mapDispatchToProps = {
+    addCartProduct,
+}
+
+export default connect(null, mapDispatchToProps)(Products);

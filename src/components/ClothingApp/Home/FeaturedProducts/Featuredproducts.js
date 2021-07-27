@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import mercadoLibreService from '../../../../services/mercadol-service';
 import Slider from "react-slick";
 import ProductCard from "../../../../assets/ProductCard/ProductCard";
+import { connect } from 'react-redux';
+import addCartProduct from '../../../../redux/actions/addCartProduct'
 
 import './FeaturedProducts.scss'
 
@@ -59,12 +61,16 @@ const settings = {
     ]
 };
 
-const Featuredproducts = () => {
+const Featuredproducts = ({addCartProduct}) => {
     const [featuredProducts, setFeaturedProducts] = useState([]);
 
     useEffect(() => {
         mercadoLibreService.getRandomProducts().then(apiProducts => setFeaturedProducts((apiProducts))); // actualiza la lista de ids
     }, []);
+
+    const addProduct = product => {
+        addCartProduct(product);
+    }
     return (
         // <p></p>
         <div className='featured-product_container'>
@@ -75,6 +81,7 @@ const Featuredproducts = () => {
                 {featuredProducts.map((product, idx) =>
                     <ProductCard
                         {...product}
+                        func = {() => {addProduct(product)}}
                     />
                 )}
             </Slider>
@@ -82,4 +89,8 @@ const Featuredproducts = () => {
     )
 }
 
-export default Featuredproducts;
+const mapDispatchToProps = {
+    addCartProduct,
+}
+
+export default connect(null, mapDispatchToProps)(Featuredproducts);

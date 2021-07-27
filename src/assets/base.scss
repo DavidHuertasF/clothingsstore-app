@@ -1,19 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Heebo:wght@300&family=Nunito:wght@800&family=Roboto:wght@900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Heebo:wght@300&family=Nunito:wght@800&family=Roboto:wght@900&display=swap");
 
 // font-family: 'Bebas Neue', cursive; icon app
 // font-family: 'Heebo', sans-serif; search input
 // font-family: 'Nunito', sans-serif;  titles
 // font-family: 'Roboto', sans-serif; featured categories
 
-html{
+html {
   scroll-snap-align: none;
-  scroll-snap-align:  end; 
-    scroll-snap-type: x proximity;
+  scroll-snap-align: end;
+  scroll-snap-type: x proximity;
   // scroll-snap-align: center;
   // scroll-snap-align: inherit;
-// scroll-snap-align: initial;
-// scroll-snap-align: revert;
-// scroll-snap-align: unset;
+  // scroll-snap-align: initial;
+  // scroll-snap-align: revert;
+  // scroll-snap-align: unset;
   scroll-behavior: smooth;
 }
 
@@ -43,7 +43,8 @@ button:focus {
 }
 
 .principal-dark__button,
-.principal-light__button {
+.principal-light__button,
+.danger__button {
   padding: 8px 10px;
   font-size: 12px;
   width: fit-content;
@@ -67,21 +68,22 @@ button:focus {
   border: solid 1px black;
 }
 
+.danger__button {
+  background-color: rgb(189, 19, 19);
+  color: white;
+}
+
 .principal-dark__button {
   background-color: rgb(0, 0, 0);
   color: white;
 }
 
-
-.phone{
+.phone {
   display: none;
 }
 
 @media only screen and (max-width: 768px) {
-  .phone{
+  .phone {
     display: initial;
   }
-
-  
 }
-

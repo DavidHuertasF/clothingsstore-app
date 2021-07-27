@@ -1,16 +1,14 @@
 import { useParams } from 'react-router-dom';
 import mercadoLibreService from '../../../services/mercadol-service'
 import { useState, useEffect } from 'react';
-import axios from "axios";
-
-
-import './Search.scss'
 import Products from './Products/Products';
 import Pagination from './Pagination/Pagination';
 
+import './Search.scss'
+
+
 
 const Search = () => {
-    
     const [findedProducts, setFindedProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
