@@ -1,4 +1,3 @@
-
 .nav-menu {
   height: 100vh;
   width: 90vw;
@@ -15,9 +14,6 @@
     transition: 0.3s;
   }
 
-
-
-  
   .nav-text {
     display: flex;
     justify-content: flex-start;
@@ -26,7 +22,7 @@
     list-style: none;
     height: 60px;
     margin-bottom: 5px;
-  
+
     a {
       text-decoration: none;
       color: black;
@@ -41,16 +37,15 @@
     }
 
     a:hover {
-      background-color:#5b17aa;;
+      background-color: #5b17aa;
       color: white;
     }
-  
   }
-  
+
   .nav-menu-items {
     width: 100%;
   }
-  
+
   .navbar-toggle {
     background-color: transparent;
     display: flex;
@@ -63,15 +58,12 @@
     justify-content: flex-start;
     align-items: center;
 
-    img{
-      width:36px;
+    img {
+      width: 36px;
     }
+  }
 
+  span {
+    margin-left: 16px;
   }
-  
-  span{
-      margin-left: 16px;
-  }
-  
 }
-

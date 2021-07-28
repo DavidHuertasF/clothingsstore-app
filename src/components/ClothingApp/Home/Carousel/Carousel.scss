@@ -229,37 +229,38 @@ li {
 }
 
 @media only screen and (max-width: 768px) {
-
   .separator_div {
     height: calc(5vh + 1vw);
-}
+  }
 
   .carousel {
     padding-top: calc(20vh + 35vw) !important;
   }
 
-  .carousel::before, .carousel::after, .carousel__prev, .carousel__next {
+  .carousel::before,
+  .carousel::after,
+  .carousel__prev,
+  .carousel__next {
     margin-top: 34%;
     width: 3rem;
     height: 3rem;
   }
-  
-.carousel::before,
-.carousel::after {
-  background-color: rgba(51, 51, 51, 0.219);
-  background-size: 1.4rem 2rem;
-  line-height: 3rem;
-}
-  
+
+  .carousel::before,
+  .carousel::after {
+    background-color: rgba(51, 51, 51, 0.219);
+    background-size: 1.4rem 2rem;
+    line-height: 3rem;
+  }
 
   .carousel__navigation-button {
     width: 1.6rem;
     height: 1.6rem;
-}
+  }
 
   .carousel__slide img {
     width: 100%;
-    height: calc(20vh + 35vw) ;
+    height: calc(20vh + 35vw);
     object-fit: cover;
   }
 }

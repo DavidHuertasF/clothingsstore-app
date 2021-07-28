@@ -80,6 +80,7 @@ const Featuredproducts = ({addCartProduct}) => {
                 {/* {JSON.stringify(planeData)} */}
                 {featuredProducts.map((product, idx) =>
                     <ProductCard
+                    key={idx}
                         {...product}
                         func = {() => {addProduct(product)}}
                     />

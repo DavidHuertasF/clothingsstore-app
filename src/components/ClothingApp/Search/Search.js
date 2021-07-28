@@ -6,8 +6,6 @@ import Pagination from './Pagination/Pagination';
 
 import './Search.scss'
 
-
-
 const Search = () => {
     const [findedProducts, setFindedProducts] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -27,7 +25,7 @@ const Search = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, );
+    });
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -46,8 +44,9 @@ const Search = () => {
             />
             <Pagination
                 totalPosts={Object.keys(findedProducts).length}
-                paginate = {paginate}
+                paginate={paginate}
                 postPerPage={postsPerPage}
+                currentPage={currentPage}
             />
         </div>
     )

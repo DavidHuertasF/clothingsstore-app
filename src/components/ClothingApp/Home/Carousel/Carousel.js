@@ -1,7 +1,5 @@
 import './Carousel.scss'
 const Carousel = () => {
-
-
     return (
         <section className="carousel" aria-label="Gallery">
             <ol className="carousel__viewport">

@@ -29,7 +29,7 @@ const Header = ({ user, products }) => {
                         </button>
                         <Link to={`/`}>
                             <p className='logo_text'>CLOTHESSTORE</p>
-                            
+
                         </Link>
                         <Link to={`/cart`}>
                             <img className='cart_icon_p phone' src="https://drive.google.com/uc?id=17ByO510HDOzVzrnwEVT2ZofvO_u3891c" alt="" />
@@ -60,7 +60,7 @@ const Header = ({ user, products }) => {
                 <div className='header-down_container'>
                     {HeaderData.map((item, index) => {
                         return (
-                            <Link to={item.path}>
+                            <Link key={index} to={item.path}>
                                 <p key={index} className={item.cName}>
                                     {item.title}
                                 </p>

@@ -7,7 +7,6 @@ const SearchMessage = ({message}) => {
 
             <p>{message}</p>
         </div>
-
     )
 }
 

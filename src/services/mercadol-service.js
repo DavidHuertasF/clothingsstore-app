@@ -42,7 +42,7 @@ const mercadoLibreService = {
         return axios.get(`https://api.mercadolibre.com/sites/MCO/search?category=MCO1430&limit=10&offset=${getRandomInt()}`)
             .then((res) => {
                 const { results } = res.data;
-                console.log(res.data.results);
+                // console.log(res.data.results);
                 return flattenProducts(results);
             })
             .catch((err) => {
@@ -54,7 +54,7 @@ const mercadoLibreService = {
         return axios.get(`https://api.mercadolibre.com/sites/MCO/search?category=MCO1430&q=${name}`)
             .then((res) => {
                 const { results } = res.data;
-                console.log(res.data.results);
+                // console.log(res.data.results);
                 return flattenProducts(results);
             })
             .catch((err) => {
